@@ -1,8 +1,11 @@
-<img src="https://github.com/tomasbourdain/DataVisualization/blob/main/assets/whr_small.jpg?raw=true" >
+<img src="[https://github.com/tomasbourdain/AlphaZeroFromScratch/blob/main/assets/Model_Architecture.jpg](https://github.com/tomasbourdain/DataVisualization/blob/main/assets/whr.jpg)" width="400"/>
+
 
 # World Happiness Report Dashboard
 
 The World Happiness Report ranks countries based on various measures of happiness and well-being, such as income, social support, life expectancy, and freedom to make life choices. The Dashboard aims to provide insight into the factors that contribute to people's happiness and inform policy decisions to improve the well-being of citizens around the world.
+
+https://data-visualization.onrender.com/
 
 ## More About
 
