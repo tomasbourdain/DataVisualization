@@ -230,9 +230,6 @@ df_coords = df_coords[['country', 'country_code','latitude','longitude']]
 
 app = Dash(__name__, external_stylesheets=external_stylesheets, assets_folder='assets', assets_url_path='assets')
 
-def create_app():
-    return app
-
 server = app.server
 
 
