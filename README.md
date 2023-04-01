@@ -1,4 +1,4 @@
-<img src="https://github.com/tomasbourdain/DataVisualization/blob/main/assets/whr.jpg" width="400"/>
+<img src="https://github.com/tomasbourdain/DataVisualization/blob/main/assets/whr.jpg" width="200"/>
 
 
 # World Happiness Report Dashboard
