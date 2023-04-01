@@ -3,6 +3,7 @@ from dash import Dash, dcc, html, Input, Output
 import plotly.graph_objects as go
 import plotly.express as px
 import pandas as pd
+import numpy as np
 
 image_path = '/images/whr.jpg'
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
