@@ -3,7 +3,6 @@ from dash import Dash, dcc, html, Input, Output
 import plotly.graph_objects as go
 import plotly.express as px
 import pandas as pd
-import numpy as np
 
 image_path = '/images/whr.jpg'
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -225,14 +224,12 @@ df_inflation = df_inflation[['Country', 'Country Code', '2015', '2016', '2017', 
 df_inflation = df_inflation[df_inflation['Note'] == 'Annual average inflation']
 df_inflation.drop('Note', axis=1, inplace=True)
 
-df_coords = pd.read_csv('data/world_country_and_usa_states_latitude_and_longitude_values.csv')
+df_coords = pd.read_csv('data\world_country_and_usa_states_latitude_and_longitude_values.csv')
 df_coords = df_coords[['country', 'country_code','latitude','longitude']]
 
 app = Dash(__name__, external_stylesheets=external_stylesheets, assets_folder='assets', assets_url_path='assets')
 
 server = app.server
-
-
 
 # MAP
 fig = px.choropleth(df, locations='Code', color='Happiness Score', 
@@ -1180,7 +1177,7 @@ def update_line_plots(region, country):
         df_avg = pd.DataFrame(averages)
 
         # create the bar graph using Plotly Express
-        fig = px.line(df_avg, x="Year", y=df_avg['Happiness Score'].round(2), title='Average Happiness Score by Year', template='plotly_dark', text=df_avg['Happiness Score'].round(2))
+        fig = px.line(df_avg, x="Year", y=df_avg['Happiness Score'].round(2), title='Happiness Score by Year', template='plotly_dark', text=df_avg['Happiness Score'].round(2))
         fig.update_traces(hovertemplate='<b>Year:</b> %{x}<br><b>Happiness Score:</b> %{y:.2f}')
         fig.update_traces(line=dict(color='rgb(49,130,189)'), textposition='top center')
         fig.update_layout(yaxis=dict(title='Happiness Score'))
@@ -1227,7 +1224,7 @@ def update_line_plots(region, country):
         df_avg = pd.DataFrame(averages)
 
         # create the bar graph using Plotly Express
-        fig = px.line(df_avg, x="Year", y=df_avg['Happiness Score'].round(2), title='Average Happiness Score in {} by Year'.format(country), template='plotly_dark', text=df_avg['Happiness Score'].round(2))
+        fig = px.line(df_avg, x="Year", y=df_avg['Happiness Score'].round(2), title='Happiness Score in {} by Year'.format(country), template='plotly_dark', text=df_avg['Happiness Score'].round(2))
         fig.update_traces(hovertemplate='<b>Year:</b> %{x}<br><b>Happiness Score:</b> %{y:.2f}')
         fig.update_traces(line=dict(color='rgb(49,130,189)'), textposition='top center')
         fig.update_layout(yaxis=dict(title='Happiness Score'))
@@ -1274,7 +1271,7 @@ def update_line_plots(region, country):
         df_avg = pd.DataFrame(averages)
 
         # create the bar graph using Plotly Express
-        fig = px.line(df_avg, x="Year", y=df_avg['Happiness Score'].round(2), title='Average Happiness Score in {} by Year'.format(region), template='plotly_dark', text=df_avg['Happiness Score'].round(2))
+        fig = px.line(df_avg, x="Year", y=df_avg['Happiness Score'].round(2), title='Happiness Score in {} by Year'.format(region), template='plotly_dark', text=df_avg['Happiness Score'].round(2))
         fig.update_traces(hovertemplate='<b>Year:</b> %{x}<br><b>Happiness Score:</b> %{y:.2f}')
         fig.update_traces(line=dict(color='rgb(49,130,189)'), textposition='top center')
         fig.update_layout(yaxis=dict(title='Happiness Score'))
@@ -1313,4 +1310,4 @@ def update_line_plots(region, country):
     
     
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run(debug=True)
